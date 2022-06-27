@@ -115,7 +115,7 @@ The `-o` flag forces the tool to generate SSH keys with the OpenSSH format. The 
 
 ```bash
 cd ~/.ssh
-github@ubuntu:~/.ssh$ ssh-keygen -o -t rsa -C "email@example.com"
+ssh-keygen -o -t rsa -C "email@example.com"
 cat id_rsa.pub
 ```
 
