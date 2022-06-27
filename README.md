@@ -48,7 +48,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 The output should be as below:
 
-![alt text](/home/btmn/Workspace/FreshMint/img/img1.png)
+![alt text](https://github.com/ii00/FreshMint/blob/main/img/img1.png)
 
 Just as Bash has .bashrc configuration file, Zsh also needs to have a configuration file called .zshrc which is found in the Oh-My-Zsh template directory if not already on your home directory. To enable the configuration file, run the below commands, first one if .zshrc is not on your home directory or jump to the second command if you have .zshrc in your home directory:
 
