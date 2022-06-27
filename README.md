@@ -109,3 +109,14 @@ Then:
 nvm install node
 ```
 #
+## github ssh
+
+The `-o` flag forces the tool to generate SSH keys with the OpenSSH format. The `-t` flag specifies they type of SSH keys to create. The `-C` flag allows for comments that get added as metadata at the end of the public key.
+
+```bash
+cd ~/.ssh
+github@ubuntu:~/.ssh$ ssh-keygen -o -t rsa -C "email@example.com"
+cat id_rsa.pub
+```
+
+Log into GitHub, Navigate `settings` > `SSH and GPG keys` > `New GitHub SSH key`. Provide a unique name, and paste the value of the private GitHub SSH key you copied earlier. Once you copy the SSH URL of the GitHub repo, you can use it to clone a copy of the remote repo into the local environment. On the initial clone, you might get a message that questions the authenticity of the host. This due to the lack of a third party certificate authority to validate your keys. If you are confident in the validity of the keys you just created — which you certainly should be, because you created them — just type yes to carry on with an SSH clone of the GitHub repo.
