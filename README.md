@@ -81,7 +81,7 @@ ls -a
 To add plugins in `~/.zshrc`. These the plugins I use:
 
 ```
-plugins=(git gitfast git-open direnv dnf iterm2 kubectl terraform alias-tips aws brew vscode colorize dirhistory extract zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting colored-man-pages forgit)
+plugins=(virtualenv git gitfast git-open direnv dnf iterm2 kubectl terraform alias-tips aws brew vscode colorize dirhistory extract zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting colored-man-pages forgit)
 ```
 
 Git clone needed plugins(`forgit` requires [fzf](https://github.com/junegunn/fzf)):
