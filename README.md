@@ -167,6 +167,8 @@ pyenv install 3.10.5
 And now we can configure our project to use the specific version:
 
 ```bash
+mkdir testenv
+cd testenv
 echo 'layout pyenv 3.10.5' > .envrc
 direnv allow
 ```
