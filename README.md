@@ -1,7 +1,18 @@
 ## FreshMint
 Setup after newly installed Linux Mint:
 
-## Zsh and Oh My Zsh
+[zsh and oh my zsh](#zsh-and-oh-my-zsh)
+
+[nvm](#nvm)
+
+[github ssh](#github-ssh)
+
+[direnv python](#direnv-python)
+
+[pyenv](#pyenv)
+
+
+## zsh and oh my zsh
 For the installation of Zsh and Oh My Zsh, we need a number of tools which can be installed using the below command:
 
 ```bash
@@ -97,7 +108,7 @@ git clone https://github.com/ael-code/zsh-colored-man-pages
 git clone https://github.com/wfxr/forgit
 ```
 
-## nvm, npm, angular...
+## nvm
 It's recommended installing node and npm using [nvm](https://github.com/nvm-sh/nvm#git-install).
 
 Then:
@@ -139,7 +150,7 @@ To load Python Virtual Environments in your working directory we run the layout 
 echo 'layout python' > .envrc
 ```
 
-## pyenv for zsh
+## pyenv
 
 pyenv is a version management utility for Python. It allows, among other things, to change Python versions on a per-project basis. direnv provides support for it since version 2.21.0, so together they can give us a higher level of control on the version we use in our environment.
 
