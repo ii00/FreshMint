@@ -117,3 +117,62 @@ cat id_rsa.pub
 
 Log into GitHub, Navigate `settings` > `SSH and GPG keys` > `New GitHub SSH key`. Provide a unique name, and paste the value of the private GitHub SSH key you copied earlier. Once you copy the SSH URL of the GitHub repo, you can use it to clone a copy of the remote repo into the local environment. On the initial clone, you might get a message that questions the authenticity of the host. This due to the lack of a third party certificate authority to validate your keys. If you are confident in the validity of the keys you just created — which you certainly should be, because you created them — just type yes to carry on with an SSH clone of the GitHub repo.
 
+## direnv python
+
+To install it we'll run the bash installer they provide. We could use the package manager of our distribution, but the bash installer will ensure we install the latest version available:
+
+```bash
+curl -sfL https://direnv.net/install.sh | bash
+```
+
+First have to install `zsh`.Now we need to hook direnv to bash. We'll edit `~/.zshrc` and then reload it:
+
+```bash
+echo 'eval "$(direnv hook bash)"' >> ~/.zshrc
+source ~/.zshrc
+```
+This way `direnv` will link itself to the shell and will be executed always before each prompt. We will never notice it's working on the background. `direnv` will check if something needs to be loaded on the current folder. It checks the existence of a file named `.envrc`, with instructions on what should be loaded.
+
+To load Python Virtual Environments in your working directory we run the layout command, followed by the Python version:
+
+```bash
+echo 'layout python' > .envrc
+```
+
+## pyenv for zsh
+
+pyenv is a version management utility for Python. It allows, among other things, to change Python versions on a per-project basis. direnv provides support for it since version 2.21.0, so together they can give us a higher level of control on the version we use in our environment.
+
+Install `pyenv`:
+
+```bash
+curl -L https://pyenv.run | bash
+```
+
+And then ensuring it will always be accessible to our terminal:
+
+```bash
+echo 'export PATH="~/.pyenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bzshrc
+source ~/.zshrc
+```
+
+Install needed python version with `pyenv`, it may require some libs for Mint to install before:
+
+```bash
+pyenv install 3.10.5
+```
+
+And now we can configure our project to use the specific version:
+
+```bash
+echo 'layout pyenv 3.10.5' > .envrc
+direnv allow
+```
+
+Check version:
+
+```bash
+python --version
+```
