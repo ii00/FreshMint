@@ -98,7 +98,7 @@ git clone https://github.com/wfxr/forgit
 ```
 
 ## nvm, npm, angular...
-Recommended installing node and npm using [nvm](https://github.com/nvm-sh/nvm#git-install).
+It's recommended installing node and npm using [nvm](https://github.com/nvm-sh/nvm#git-install).
 
 Then:
 
@@ -125,7 +125,7 @@ To install it we'll run the bash installer they provide. We could use the packag
 curl -sfL https://direnv.net/install.sh | bash
 ```
 
-First have to install `zsh`.Now we need to hook direnv to bash. We'll edit `~/.zshrc` and then reload it:
+First have to install `zsh`. Now we need to hook direnv to bash. We'll edit `~/.zshrc` and then reload it:
 
 ```bash
 echo 'eval "$(direnv hook bash)"' >> ~/.zshrc
