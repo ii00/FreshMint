@@ -11,6 +11,8 @@ Setup after newly installed Linux Mint:
 
 [pyenv](#pyenv)
 
+[docker](#docker)
+
 
 ## zsh and oh my zsh
 For the installation of Zsh and Oh My Zsh, we need a number of tools which can be installed using the below command:
@@ -188,4 +190,48 @@ Check version:
 
 ```bash
 python --version
+```
+
+## docker
+
+Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+Add Docker’s official GPG key:
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+```
+
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+Use the following command to set up the repository, `$(lsb_release -cs)` is replaced with `bionic`:
+
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  bionic stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+Update the apt package index, and install the latest version of Docker Engine, containerd, and Docker Compose, or go to the next step to install a specific version:
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
